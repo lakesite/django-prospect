@@ -1,7 +1,7 @@
 # development #
 
 Extending and developing prospect is best done through the included example
-django application.  
+django project.  
 
 ## setup ##
 
@@ -13,11 +13,11 @@ First create a python3 virtualenv and then activate it under two terminals:
 In one terminal you'll setup the example application and will be using the
 prospect app through this project:
 
-        (.env) example_application$ pip install -r requirements.txt
-        (.env) example_application$ cd mysite
-        (.env) example_application/mysite$ python manage.py migrate
-        (.env) example_application/mysite$ python manage.py createsuperuser
-        (.env) example_application/mysite$ python manage.py runserver
+        (.env) example_project$ pip install -r requirements.txt
+        (.env) example_project$ cd mysite
+        (.env) example_project/mysite$ python manage.py migrate
+        (.env) example_project/mysite$ python manage.py createsuperuser
+        (.env) example_project/mysite$ python manage.py runserver
 
 The other terminal will periodically re-install changes you've made to the app
 under site-packages.
@@ -31,9 +31,9 @@ assuming python 3.6 and django_prospect-0.1;
 
         rm -rf .env/lib/python3.6/site-packages/django_prospect-0.1-py3.6.egg/migrations
         (.env) django-prospect$ python setup.py sdist
-        (.env) django-prospect/example_application$ rm db.sqlite3
-        (.env) django-prospect/example_application$ python manage.py makemigrations prospect
-        (.env) django-prospect/example_application$ python manage.py migrate
+        (.env) django-prospect/example_project$ rm db.sqlite3
+        (.env) django-prospect/example_project$ python manage.py makemigrations prospect
+        (.env) django-prospect/example_project$ python manage.py migrate
         (.env) django-prospect$ cp .env/lib/python3.6/site-packages/django_prospect-0.1-py3.6.egg/migrations/* ./migrations/
 
 This seems a bit convoluted, if you have a better workflow, I'd love to know.
